@@ -13,7 +13,6 @@ class UserParameters:
         self.nc_sales_tax = 4.75
 
 class LoanCalculator:
-
     @classmethod
     def loan_calc(self):
         try:
