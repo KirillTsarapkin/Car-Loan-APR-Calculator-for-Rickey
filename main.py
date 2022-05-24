@@ -115,7 +115,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.textBrowser_results.setText('')
             combined_warning_msgs = '\n'.join(str(i) for i in UserParameters.warning_msgs)
             self.textBrowser_results.setStyleSheet("color: red;")
-            self.textBrowser_results.setText("-"*100+"\n" + combined_warning_msgs + "\n"+"-"*100)
+            self.textBrowser_results.setText("-"*90+"\n" + combined_warning_msgs + "\n"+"-"*90)
             UserParameters.warning_msgs.clear()
 
     def append_result_msgs(self):
@@ -123,7 +123,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.textBrowser_results.setText('')
             combined_result_msgs = '\n'.join(str(i) for i in UserParameters.result_msgs)
             self.textBrowser_results.setStyleSheet("color: blue;")
-            self.textBrowser_results.setText("-"*100+"\n" + combined_result_msgs + "\n"+"-"*100)
+            self.textBrowser_results.setText("-"*90+"\n" + combined_result_msgs + "\n"+"-"*90)
             UserParameters.result_msgs.clear()
 
     def simulation_1(self):

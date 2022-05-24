@@ -24,8 +24,8 @@ class LoanCalculator:
             total = monthly_payment * UserParameters.number_of_months
             loan_cost = total - UserParameters.amount_borrowed
 
-            UserParameters.result_msgs.append(f'The monthly payment before tax is ${str(round(monthly_payment_before_tax,2))}')
-            UserParameters.result_msgs.append(f'The monthly payment after tax of {str(round(UserParameters.state_sales_tax*100,2))}% is ${str(round(monthly_payment,2))}')
+            #UserParameters.result_msgs.append(f'The monthly payment before tax is ${str(round(monthly_payment_before_tax,2))}')
+            UserParameters.result_msgs.append(f'The monthly payment after sales tax of {str(round(UserParameters.state_sales_tax*100,2))}% is ${str(round(monthly_payment,2))}')
             UserParameters.result_msgs.append(f'The cost of the loan with APR of {str(round(UserParameters.apr*100,2))}% for a period of {UserParameters.number_of_months} months is ${str(round(loan_cost,2))}')
             UserParameters.result_msgs.append(f'The total amount that will be payed, loan plus the cost of the loan is ${str(round(total,2))}')
         except Exception as e:
