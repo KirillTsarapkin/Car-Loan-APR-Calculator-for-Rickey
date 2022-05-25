@@ -26,10 +26,10 @@ class LoanCalculator:
             total = monthly_payment * UserParameters.number_of_months
             loan_cost = total - loan_with_sales_tax
 
-            UserParameters.result_msgs.append(f'The loan amount after tax is ${str(round(loan_with_sales_tax,2))}')
-            UserParameters.result_msgs.append(f'The monthly payment after tax of {str(round(UserParameters.state_sales_tax*100,2))}% is ${str(round(monthly_payment,2))}')
-            UserParameters.result_msgs.append(f'The cost of the loan with APR of {str(round(UserParameters.apr*100,2))}% for a period of {UserParameters.number_of_months} months is ${str(round(loan_cost,2))}')
-            UserParameters.result_msgs.append(f'The total amount that will be payed, loan plus the cost of the loan is ${str(round(total,2))}')
+            UserParameters.result_msgs.append(f'The loan amount after tax of {str(round(UserParameters.state_sales_tax*100,2))}% is ${str(round(loan_with_sales_tax,2))}')
+            UserParameters.result_msgs.append(f'\nThe monthly payment is ${str(round(monthly_payment,2))}')
+            UserParameters.result_msgs.append(f'\nThe cost of the loan with APR of {str(round(UserParameters.apr*100,2))}% for a period of {UserParameters.number_of_months} months is ${str(round(loan_cost,2))}')
+            UserParameters.result_msgs.append(f'\nThe total amount that will be payed, loan plus the cost of the loan is ${str(round(total,2))}')
         except Exception as e:
             UserParameters.warning_msgs.append(f'Error Occured : Please make sure that you filled all the fields correctly \nError Type : {e}')
 

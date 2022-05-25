@@ -111,7 +111,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.textBrowser_results.setText('')
             combined_warning_msgs = '\n'.join(str(i) for i in UserParameters.warning_msgs)
             self.textBrowser_results.setStyleSheet("color: red;")
-            self.textBrowser_results.setText("-"*90+"\n" + combined_warning_msgs + "\n"+"-"*90)
+            self.textBrowser_results.setText(combined_warning_msgs)
             UserParameters.warning_msgs.clear()
 
     def append_result_msgs(self):
