@@ -13,6 +13,7 @@ class UserParameters:
         self.nc_sales_tax = 4.75
 
 class LoanCalculator:
+
     @classmethod
     def loan_calc(self):
         try:
@@ -25,8 +26,8 @@ class LoanCalculator:
 
             #UserParameters.result_msgs.append(f'The monthly payment before tax is ${str(round(monthly_payment_before_tax,2))}')
             UserParameters.result_msgs.append(f'The monthly payment after sales tax of {str(round(UserParameters.state_sales_tax*100,2))}% is ${str(round(monthly_payment,2))}')
-            UserParameters.result_msgs.append(f'The cost of the loan with APR of {str(round(UserParameters.apr*100,2))}% for a period of {UserParameters.number_of_months} months is ${str(round(loan_cost,2))}')
-            UserParameters.result_msgs.append(f'The total amount that will be payed, loan plus the cost of the loan is ${str(round(total,2))}')
+            UserParameters.result_msgs.append(f'\nThe cost of the loan with APR of {str(round(UserParameters.apr*100,2))}% for a period of {UserParameters.number_of_months} months is ${str(round(loan_cost,2))}')
+            UserParameters.result_msgs.append(f'\nThe total amount that will be payed, loan plus the cost of the loan is ${str(round(total,2))}')
         except Exception as e:
             UserParameters.warning_msgs.append(f'Error Occured : Please make sure that you filled all the fields correctly \nError Type : {e}')
 

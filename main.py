@@ -43,7 +43,6 @@ class MainWindow(QtWidgets.QMainWindow):
     def inputbox_loan_amount(self, text_input):
         try:
             UserParameters.amount_borrowed = float(text_input)
-            print(f'Loan amount entered: ${str(UserParameters.amount_borrowed)}')
         except:
             # Remove special characters and letters from input and keep only numbers and "."
             try:
@@ -56,7 +55,6 @@ class MainWindow(QtWidgets.QMainWindow):
     def inputbox_loan_term(self, text_input):
         try:
             UserParameters.number_of_months = float(text_input)
-            print(f'Loan term entered: {str(UserParameters.number_of_months)} months')
         except:
             try:
                 UserParameters.number_of_months = float(re.sub("[^.0-9]", "", text_input))
@@ -68,7 +66,6 @@ class MainWindow(QtWidgets.QMainWindow):
     def inputbox_apr(self, text_input):
         try:
             UserParameters.apr = float(text_input) / 100
-            print(f'Annual interest rate entered: {str(UserParameters.apr*100)}%')
         except:
             try:
                 UserParameters.apr = float(re.sub("[^.0-9]", "", text_input))
@@ -80,7 +77,6 @@ class MainWindow(QtWidgets.QMainWindow):
     def inputbox_tax(self, text_input):
         try:
             UserParameters.state_sales_tax = float(text_input)/ 100
-            print(f'state_sales_tax entered: {str(UserParameters.state_sales_tax*100)}%')
         except:
             try:
                 UserParameters.state_sales_tax = float(re.sub("[^.0-9]", "", text_input))
@@ -123,7 +119,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.textBrowser_results.setText('')
             combined_result_msgs = '\n'.join(str(i) for i in UserParameters.result_msgs)
             self.textBrowser_results.setStyleSheet("color: blue;")
-            self.textBrowser_results.setText("-"*90+"\n" + combined_result_msgs + "\n"+"-"*90)
+            self.textBrowser_results.setText(combined_result_msgs)
             UserParameters.result_msgs.clear()
 
     def simulation_1(self):
